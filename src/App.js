@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+import { useQuery } from '@apollo/client';
+import { useEffect } from 'react';
 import './App.css';
+import FilterPage from './components/FilterPage/FilterPage';
+import PageList from './components/PageList/PageList';
+import { GET_ELEMENT } from './graphql/query';
 
 function App() {
+  const { data, loading, error } = useQuery(GET_ELEMENT);
+
+  useEffect(() => {
+console.log(data)
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      className={'wpapper'}
+    >
+      <PageList />
+      <FilterPage />
     </div>
   );
 }
