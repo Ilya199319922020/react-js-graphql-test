@@ -16,33 +16,68 @@ const FilterPage = () => {
 					type={'input'}
 				/>
 				<div>
-					<InputCheckbox>
+					<Input
+						type={'checkbox'}
+					>
 						Port Canavel
-					</InputCheckbox>
-					<InputCheckbox>
+					</Input>
+					<Input
+						type={'checkbox'}
+					>
 						Port of Los Angeles
-					</InputCheckbox>
-					<InputCheckbox>
+					</Input>
+					<Input
+						type={'checkbox'}
+					>
 						Fort Lauderdale
-					</InputCheckbox>
+					</Input>
+				</div>
+			</div>
+			<div>
+				<span>
+					Тип
+				</span>
+				<div>
+					<Input
+						type={'radio'}
+					>
+						Barge
+					</Input>
+					<Input
+						type={'radio'}
+					>
+						Cargo
+					</Input>
+					<Input
+						type={'radio'}
+					>
+						High Speed Craft
+					</Input>
+					<Input
+						type={'radio'}
+					>
+						TugInput
+
+
+					</Input>
 				</div>
 			</div>
 		</div>
 	);
-};
+}; 
 
 export default FilterPage;
 
 
 
-const InputCheckbox = ({ children, active, value, id, onChange }) => {
+const Input = ({ children, active, value, id, onChange, type }) => {
 	return (
 		<div
 
 		>
 			<input
 
-				type="checkbox"
+				type={type}
 				checked={value}
 				id={id}
 				onChange={onChange}
@@ -56,5 +91,7 @@ const InputCheckbox = ({ children, active, value, id, onChange }) => {
 		</div>
 	);
 };
+
+
 
 

@@ -3,7 +3,7 @@ import React from 'react';
 const PageList = () => {
 	return (
 		<div>
-			<h5>SpaceX Ships</h5>
+			<h4>SpaceX Ships</h4>
 			<div>
 
 			</div>
