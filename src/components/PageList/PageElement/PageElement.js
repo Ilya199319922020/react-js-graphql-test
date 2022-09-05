@@ -1,6 +1,7 @@
 import React from 'react';
 
-const PageElement = (props) => {
+const PageElement = ({elementLaunch}) => {
+	
 	return (
 		<div>
 			<div>
@@ -15,7 +16,9 @@ const PageElement = (props) => {
 						Тип
 					</span>
 					<span>
-						Данные
+					{
+					  elementLaunch.mission_name
+					}
 					</span>
 				</div>
 				<div>
@@ -23,7 +26,7 @@ const PageElement = (props) => {
 						Порт
 					</span>
 					<span>
-						Данные
+						{elementLaunch.rocket.rocket_name}
 					</span>
 				</div>
 			</div>

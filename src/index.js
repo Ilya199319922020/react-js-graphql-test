@@ -6,18 +6,6 @@ import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@ap
 
 const client = new ApolloClient({
   uri: 'https://api.spacex.land/graphql/',
-  // fetchOptions: {
-  //   mode: 'no-cors',
-  // },
-
-//   link: new createHttpLink(
-//     {
-//       uri: 'https://api.spacex.land/graphql/',
-//       fetchOptions: {
-//         mode: 'no-cors'
-//       }
-//     }
-// ),
   cache: new InMemoryCache(),
 });
 
