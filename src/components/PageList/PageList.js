@@ -2,6 +2,7 @@ import { useQuery } from '@apollo/client';
 import React, { useEffect, useState } from 'react';
 import { GET_ELEMENT } from '../../graphql/query';
 import PageElement from './PageElement/PageElement';
+import styles from './PageList.module.css';
 
 const PageList = () => {
 	const [page, setPage] = useState(0);
@@ -28,29 +29,47 @@ const PageList = () => {
 	);
 
 	return (
-		<div>
-			<h4>SpaceX Ships</h4>
-			<div>
+		<div
+			className={styles.container}
+		>
+			<h4
+				className={styles.container__header}
+			>
+				SpaceX Ships
+			</h4>
+			<div
+				className={styles.container__list}
+			>
 				{
 					elements
 						? listLaunch
 						: <span>Loading...</span>
 				}
 			</div>
-			<div>
+			<div
+				className={styles.container__btn}
+			>
 				<button
+					className={styles.container__btn_prev}
 					disabled={!page}
 					onClick={() => setPage(prev => prev - 1)}
 				>
-					&lt;
+					<div>
+						&lt;
+					</div>
 				</button>
-				<span>
+				<span
+					className={styles.container__btn_page}
+				>
 					{page + 1}
 				</span>
 				<button
+					className={styles.container__btn_next}
 					onClick={() => setPage(prev => prev + 1)}
 				>
-					&gt;
+					<div>
+						&gt;
+					</div>
 				</button>
 			</div>
 		</div>
