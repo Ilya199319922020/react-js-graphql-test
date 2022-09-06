@@ -3,7 +3,7 @@ import PageElement from './PageElement/PageElement';
 import styles from './PageList.module.css';
 
 const PageList = ({ elements, page, setPage }) => {
-
+console.log(elements)
 	const listLaunch = elements && elements.map(el => <PageElement
 		key={el.id}
 		elementLaunch={el}

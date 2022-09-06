@@ -5,8 +5,9 @@ const FilterPage = ({ state, dispatch, arrElements }) => {
 
 	const handler = (e) => {
 		const { target } = e
-		const isFilter = target.type === 'checkbox' ? target.checked : target.value
-		if(arrElements.launchesPast.length){
+		const isFilter = target.type === 'checkbox' || target.type === 'radio'  ? target.checked : target.value
+		console.log(target.value )
+		if (arrElements.launchesPast.length) {
 			dispatch({
 				type: target.id,
 				value: {
@@ -15,7 +16,7 @@ const FilterPage = ({ state, dispatch, arrElements }) => {
 				}
 			})
 		}
-		
+
 	}
 
 	return (
@@ -88,22 +89,34 @@ const FilterPage = ({ state, dispatch, arrElements }) => {
 						className={style.sidebar__inputRadio_element}
 					>
 						<Input
+							id={'4'}
 							type={'radio'}
+							onChange={handler}
+							checked={state.isBarge}
 						>
 							Barge
 						</Input>
 						<Input
+							id={'5'}
 							type={'radio'}
+							onChange={handler}
+							checked={state.isCargo}
 						>
 							Cargo
 						</Input>
 						<Input
+							id={'6'}
 							type={'radio'}
+							onChange={handler}
+							checked={state.isCraft}
 						>
 							High Speed Craft
 						</Input>
 						<Input
+							id={'7'}
 							type={'radio'}
+							onChange={handler}
+							checked={state.isTug}
 						>
 							TugInput
 						</Input>
@@ -116,7 +129,7 @@ const FilterPage = ({ state, dispatch, arrElements }) => {
 
 export default FilterPage;
 
-const Input = ({ children, active, value, id, onChange, type }) => {
+const Input = ({ children, checked,  id, onChange, type }) => {
 	return (
 		<div
 			className={style.input}
@@ -124,7 +137,7 @@ const Input = ({ children, active, value, id, onChange, type }) => {
 			<input
 				className={style.input__item}
 				type={type}
-				checked={value}
+				checked={checked}
 				id={id}
 				onChange={onChange}
 			/>

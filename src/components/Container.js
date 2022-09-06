@@ -14,6 +14,10 @@ const Container = () => {
 		isCanaveral: false,
 		isLosAngeles: false,
 		isLauderdale: false,
+		isBarge: false,
+		isCargo: false,
+		isCraft: false,
+		isTug: false,
 	});
 
 	const PAGE_SIZE = 5;
