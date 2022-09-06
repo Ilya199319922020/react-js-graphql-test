@@ -1,0 +1,46 @@
+.page{
+	display: flex;
+	flex-direction: column;
+	}
+	.page__header{
+		display: flex;
+		padding: 0;
+		align-items: center;
+		margin-bottom: 29px;
+	}
+	.page__header_item{
+		font-size: 20px;
+		font-weight: 500;
+		margin-right: 23px;
+	}
+	.page__header_btn{
+			height: 16px;
+		width: 16px;
+		background-color: rgb(254, 254, 255);
+		border: rgb(254, 254, 255);
+		padding: 0;
+	}
+	.page__header_btn span {
+		height: 16px;
+		width: 16px;
+		color:#2962FF;
+	}
+	.page__info{
+		display: flex;
+				border-bottom: 1px solid #A5A5A5;
+		padding-bottom: 29px;
+		margin-bottom: 40px;
+	}
+	.page__info_type{
+		display: flex;
+		justify-content: space-between;
+		margin-right: 200px;
+		min-width: 253px;
+	}
+	.page__info_location{
+		
+	}
+
+	.page__info_locationPort{
+		margin-right: 104px;
+	}

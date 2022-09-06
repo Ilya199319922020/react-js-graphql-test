@@ -1,5 +1,6 @@
 import React from 'react';
 import style from './PageElement.module.css';
+import arrow from '../../../assets/icon/icon.png';
 
 const PageElement = ({ elementLaunch }) => {
 	return (
@@ -12,6 +13,7 @@ const PageElement = ({ elementLaunch }) => {
 				<h6
 					className={style.page__header_item}
 				>
+
 					{
 						elementLaunch.mission_name
 					}
@@ -19,7 +21,10 @@ const PageElement = ({ elementLaunch }) => {
 				<button
 					className={style.page__header_btn}
 				>
-					-&gt;
+					<img
+						className={style.page__header_arrow}
+						src={arrow}
+					/>
 				</button>
 			</div>
 			<div
@@ -29,7 +34,7 @@ const PageElement = ({ elementLaunch }) => {
 					className={style.page__info_type}
 				>
 					<span
-
+						className={style.page__info_typeHeader}
 					>
 						Тип
 					</span>
@@ -42,7 +47,9 @@ const PageElement = ({ elementLaunch }) => {
 				<div
 					className={style.page__info_location}
 				>
-					<span>
+					<span
+					className={style.page__info_locationPort}
+					>
 						Порт
 					</span>
 					<span>
@@ -50,6 +57,7 @@ const PageElement = ({ elementLaunch }) => {
 					</span>
 				</div>
 			</div>
+
 		</div>
 	);
 };
