@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import style from './FilterPage.module.css';
 
 const FilterPage = ({ state, dispatch, arrElements }) => {
-
+	const [valueNewOnChange, setNewValueOnChange] = useState('');
+	
 	const handler = (e) => {
 		const { target } = e
-		const isFilter = target.type === 'checkbox' || target.type === 'radio'  ? target.checked : target.value
-		console.log(target.value )
+		const isFilter = target.type === 'checkbox' || target.type === 'radio'
+			? target.checked
+			: target.value;
+
 		if (arrElements.launchesPast.length) {
 			dispatch({
 				type: target.id,
@@ -14,10 +17,23 @@ const FilterPage = ({ state, dispatch, arrElements }) => {
 					isFilter: isFilter,
 					valFilter: arrElements.launchesPast
 				}
-			})
+			});
 		}
+	};
 
-	}
+	const onFilterName = (e) => {
+		setNewValueOnChange(e.target.value);
+		const valueFilter = [...arrElements.launchesPast]
+			.filter((element) => {
+				if (valueNewOnChange !== '') {
+					return element?.mission_name?.toLowerCase()?.includes(valueNewOnChange?.toLowerCase())
+				}
+			});
+		dispatch({
+			type: 'filterName',
+			valueFilter
+		});
+	};
 
 	return (
 		<div
@@ -38,6 +54,8 @@ const FilterPage = ({ state, dispatch, arrElements }) => {
 						className={style.sidebar__inputName_item}
 						placeholder={'Название'}
 						type={'input'}
+						value={valueNewOnChange}
+						onChange={onFilterName}
 					/>
 				</div>
 				<div
@@ -129,7 +147,7 @@ const FilterPage = ({ state, dispatch, arrElements }) => {
 
 export default FilterPage;
 
-const Input = ({ children, checked,  id, onChange, type }) => {
+const Input = ({ children, checked, id, onChange, type }) => {
 	return (
 		<div
 			className={style.input}

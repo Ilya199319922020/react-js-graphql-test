@@ -5,6 +5,12 @@ export const reducer = (state, action) => {
 				...state,
 				arrElements: action.data,
 			}
+		case 'filterName':
+
+			return {
+				...state,
+				filterElements: action.valueFilter
+			}
 		case '1':
 			let filterTrue = action.value.valFilter
 				.filter((o) => o.launch_site.site_name === 'CCAFS SLC 40')
@@ -117,7 +123,7 @@ export const reducer = (state, action) => {
 				...state,
 				isBarge: false,
 				isCargo: false,
-				isCraft: false, 
+				isCraft: false,
 				isTug: action.value.isFilter,
 
 				filterElements: filterT
