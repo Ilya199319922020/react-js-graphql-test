@@ -1,18 +1,12 @@
 import './App.css';
-import FilterPage from './components/FilterPage/FilterPage';
-import PageList from './components/PageList/PageList';
+import Container from './components/Container';
 
 function App() {
     
   return (
-    <div
-      className={'wpapper'}
-    >
-      <PageList 
-      
-      />
-      <FilterPage />
-    </div>
+    < >
+    <Container/>
+    </>
   );
 }
 

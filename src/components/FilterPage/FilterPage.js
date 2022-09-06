@@ -1,7 +1,23 @@
 import React from 'react';
 import style from './FilterPage.module.css';
 
-const FilterPage = () => {
+const FilterPage = ({ state, dispatch, arrElements }) => {
+
+	const handler = (e) => {
+		const { target } = e
+		const isFilter = target.type === 'checkbox' ? target.checked : target.value
+		if(arrElements.launchesPast.length){
+			dispatch({
+				type: target.id,
+				value: {
+					isFilter: isFilter,
+					valFilter: arrElements.launchesPast
+				}
+			})
+		}
+		
+	}
+
 	return (
 		<div
 			className={style.container}
@@ -35,17 +51,26 @@ const FilterPage = () => {
 						className={style.sidebar__inputActive}
 					>
 						<Input
+							id={'1'}
 							type={'checkbox'}
+							onChange={handler}
+							checked={state.isCanaveral}
 						>
 							Port Canavel
 						</Input>
 						<Input
+							id={'2'}
 							type={'checkbox'}
+							onChange={handler}
+							checked={state.isLosAngeles}
 						>
 							Port of Los Angeles
 						</Input>
 						<Input
+							id={'3'}
 							type={'checkbox'}
+							onChange={handler}
+							checked={state.isLauderdale}
 						>
 							Fort Lauderdale
 						</Input>

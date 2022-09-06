@@ -7,8 +7,10 @@ query GetLaunches($limit: Int!, $offset: Int!) {
 	  mission_name
 	  launch_date_local
 	  launch_site {
+		site_name
 		 site_name_long
 	  }
+	  launch_year
 	  links {
 		 article_link
 		 video_link
@@ -16,7 +18,9 @@ query GetLaunches($limit: Int!, $offset: Int!) {
 	  }
 	  rocket {
 		 rocket_name
+		 rocket_type
 	  }
+	
 	}
  }
 `;

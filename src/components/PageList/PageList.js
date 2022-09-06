@@ -1,33 +1,15 @@
-import { useQuery } from '@apollo/client';
-import React, { useEffect, useState } from 'react';
-import { GET_ELEMENT } from '../../graphql/query';
+import React from 'react';
 import PageElement from './PageElement/PageElement';
 import styles from './PageList.module.css';
 
-const PageList = () => {
-	const [page, setPage] = useState(0);
-	const [elements, setElements] = useState([])
-	const PAGE_SIZE = 5;
+const PageList = ({ elements, page, setPage }) => {
 
-	const { data, loading, error } = useQuery(GET_ELEMENT, {
-		variables: {
-			limit: PAGE_SIZE,
-			offset: page * PAGE_SIZE
-		}
-	});
-
-	useEffect(() => {
-		if (!loading) {
-			setElements(data)
-		}
-	}, [data])
-
-	const listLaunch = elements.launchesPast?.map(el => <PageElement
+	const listLaunch = elements && elements.map(el => <PageElement
 		key={el.id}
 		elementLaunch={el}
 	/>
 	);
-
+	
 	return (
 		<div
 			className={styles.container}
