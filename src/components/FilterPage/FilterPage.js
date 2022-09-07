@@ -3,7 +3,9 @@ import style from './FilterPage.module.css';
 
 const FilterPage = ({ state, dispatch, arrElements }) => {
 	const [valueNewOnChange, setNewValueOnChange] = useState('');
-	
+	const [isGropdown, setIsGropdown] = useState(false);
+	const [count, setCount] = useState(0);
+
 	const handler = (e) => {
 		const { target } = e
 		const isFilter = target.type === 'checkbox' || target.type === 'radio'
@@ -19,6 +21,11 @@ const FilterPage = ({ state, dispatch, arrElements }) => {
 				}
 			});
 		}
+
+		target.type === 'checkbox' && target.checked
+			? setCount(prev => prev + 1)
+			: setCount(prev => prev - 1)
+
 	};
 
 	const onFilterName = (e) => {
@@ -61,39 +68,54 @@ const FilterPage = ({ state, dispatch, arrElements }) => {
 				<div
 					className={style.sidebar__inputCheckbox}
 				>
+					<div
+						className={style.sidebar__inputCheckbox_itemText}
+					>
+						Порт
+					</div>
 					<input
 						className={style.sidebar__inputCheckbox_item}
-						placeholder={'Порт'}
+						placeholder={
+							count > 1
+								? `Выбраны ${count}`
+								: count === 1
+									? `Выбран ${count}`
+									: 'Не выбрано'
+						}
 						type={'input'}
+						onClick={() => setIsGropdown(prev => !prev)}
 					/>
-					<div
-						className={style.sidebar__inputActive}
-					>
-						<Input
-							id={'1'}
-							type={'checkbox'}
-							onChange={handler}
-							checked={state.isCanaveral}
+					{
+						isGropdown &&
+						<div
+							className={style.sidebar__inputActive}
 						>
-							Port Canavel
-						</Input>
-						<Input
-							id={'2'}
-							type={'checkbox'}
-							onChange={handler}
-							checked={state.isLosAngeles}
-						>
-							Port of Los Angeles
-						</Input>
-						<Input
-							id={'3'}
-							type={'checkbox'}
-							onChange={handler}
-							checked={state.isLauderdale}
-						>
-							Fort Lauderdale
-						</Input>
-					</div>
+							<Input
+								id={'1'}
+								type={'checkbox'}
+								onChange={handler}
+								checked={state.isCanaveral}
+							>
+								Port Canavel
+							</Input>
+							<Input
+								id={'2'}
+								type={'checkbox'}
+								onChange={handler}
+								checked={state.isLosAngeles}
+							>
+								Port of Los Angeles
+							</Input>
+							<Input
+								id={'3'}
+								type={'checkbox'}
+								onChange={handler}
+								checked={state.isLauderdale}
+							>
+								Fort Lauderdale
+							</Input>
+						</div>
+					}
 				</div>
 				<div
 					className={style.sidebar__inputRadio}
@@ -147,7 +169,8 @@ const FilterPage = ({ state, dispatch, arrElements }) => {
 
 export default FilterPage;
 
-const Input = ({ children, checked, id, onChange, type }) => {
+const Input = ({ children, checked, value, id, onChange, type }) => {
+	console.log(value)
 	return (
 		<div
 			className={style.input}
@@ -155,7 +178,7 @@ const Input = ({ children, checked, id, onChange, type }) => {
 			<input
 				className={style.input__item}
 				type={type}
-				checked={checked}
+				checked={type === 'radio' ? checked : value}
 				id={id}
 				onChange={onChange}
 			/>

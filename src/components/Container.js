@@ -11,6 +11,7 @@ const Container = () => {
 	const [state, dispatch] = useReducer(reducer, {
 		arrElements: [],
 		filterElements: [],
+		pageElement: [],
 		isCanaveral: false,
 		isLosAngeles: false,
 		isLauderdale: false,
@@ -45,6 +46,8 @@ const Container = () => {
 						? state.filterElements
 						: state.arrElements.launchesPast
 				}
+				dispatch={dispatch}
+				pageElement={state.pageElement}
 				setPage={setPage}
 				page={page}
 			/>

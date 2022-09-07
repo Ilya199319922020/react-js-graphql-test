@@ -15,9 +15,26 @@
 	border-bottom: 1px solid #A5A5A5;
 	margin-bottom: 41px;
 }
+.sidebar__inputCheckbox{
+	padding-bottom:144px;
+	
+}
+.sidebar__inputCheckbox_itemText{
+	font-size: 14px;
+	font-weight: 400;
+	color: rgba(0, 0, 0, 0.4);
+}
 .sidebar__inputCheckbox_item{
 	border-bottom: 1px solid #A5A5A5;
 	padding-bottom: 7px;
+	color: transparent;
+  text-shadow: 0 0 0 black;
+
+	}
+.sidebar__inputActive{
+	position: absolute;
+	background: #FFFFFF;
+box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.23), 0px 3px 6px rgba(0, 0, 0, 0.16);
 }
 
 input::placeholder{
@@ -26,15 +43,10 @@ input::placeholder{
 	color: rgba(0, 0, 0, 0.4);
 }
 
-.sidebar__inputCheckbox{
-	/* padding-bottom: 120px; */
-	margin-bottom: 24px;
-}
 .sidebar__inputRadio_text{
 	font-size: 16px;
 	font-weight: 700;
 }
-
 
 
 
@@ -45,4 +57,8 @@ margin: 16px 16px;
 }
 .input__text{
 	margin-left: 13px;
+}
+
+input[type="checkbox"], input[type="radio"] {
+	cursor: pointer;
 }

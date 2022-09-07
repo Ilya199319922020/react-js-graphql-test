@@ -11,6 +11,12 @@ export const reducer = (state, action) => {
 				...state,
 				filterElements: action.valueFilter
 			}
+		case 'currentId':
+			return {
+				...state,
+				pageElement: action.value.elements
+					.filter(t => t.id === action.value.id)
+			}
 		case '1':
 			let filterTrue = action.value.valFilter
 				.filter((o) => o.launch_site.site_name === 'CCAFS SLC 40')
