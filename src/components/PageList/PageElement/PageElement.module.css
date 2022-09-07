@@ -27,7 +27,12 @@
 	}
 	.page__info{
 		display: flex;
-				border-bottom: 1px solid #A5A5A5;
+		border-bottom: 1px solid #A5A5A5;
+		padding-bottom: 29px;
+		margin-bottom: 40px;
+	}
+	.page__info_active {
+		display: flex;
 		padding-bottom: 29px;
 		margin-bottom: 40px;
 	}
@@ -40,7 +45,62 @@
 	.page__info_location{
 		
 	}
-
+	.page__header_arrow path:hover {  
+		fill: #092d7a; 
+	}
+	.page__info_type span:nth-child(2),
+	.page__info_location span:nth-child(2){
+		color: #2962FF;
+	}
 	.page__info_locationPort{
 		margin-right: 104px;
+	}
+	.pageCard{
+		font-weight: 400;
+      font-size: 16px;
+    }
+	.pageCard__block{
+		margin-bottom: 22px;
+	}
+	.pageCard__block_btnArrow{
+		margin-right: 7px;
+	}
+	.pageCard__block_btn{
+	color: #2962FF;
+
+	}
+	.pageCard__name{
+		font-weight: 500;
+		font-size: 28px;
+		margin-bottom: 53px;
+	}
+	.pageCard__block_info{
+		display: flex;
+	}
+
+	.pageCard__block_heft span:nth-child(2),
+	.pageCard__block_year span:nth-child(2) {
+		color: #2962FF;
+	}
+	.pageCard__block_heftItem{
+		margin-right: 105px;
+	}
+	.pageCard__block_year{
+		margin-left: 247px;
+		margin-bottom: 40px;
+	}
+	.pageCard__block_yearItem{
+		margin-right: 115px;
+	}
+	.pageCard__block_missionHeader{
+		margin-bottom: 22px;
+	}
+
+	.pageCard__block_missionHeader{
+		font-weight: 400;
+      font-size: 16px;
+	}
+
+	.pageCard__block_missionText{
+		color: #2962FF;
 	}

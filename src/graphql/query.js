@@ -20,6 +20,7 @@ query GetLaunches($limit: Int!, $offset: Int!) {
 		 rocket_name
 		 rocket_type
 	  }
+	 
 	
 	}
  }

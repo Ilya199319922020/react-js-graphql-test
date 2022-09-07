@@ -8,6 +8,7 @@ import { reducer } from '../reducer/reducer';
 
 const Container = () => {
 	const [page, setPage] = useState(0);
+	const [idCurrent, setIdCurrent] = useState(0);
 	const [state, dispatch] = useReducer(reducer, {
 		arrElements: [],
 		filterElements: [],
@@ -46,16 +47,20 @@ const Container = () => {
 						? state.filterElements
 						: state.arrElements.launchesPast
 				}
+				idCurrent={idCurrent}
+				setIdCurrent={setIdCurrent}
 				dispatch={dispatch}
 				pageElement={state.pageElement}
 				setPage={setPage}
 				page={page}
 			/>
-			<FilterPage
-				state={state}
-				arrElements={state.arrElements}
-				dispatch={dispatch}
-			/>
+			{
+				!idCurrent && <FilterPage
+					state={state}
+					arrElements={state.arrElements}
+					dispatch={dispatch}
+				/>
+			}
 		</div>
 	);
 };

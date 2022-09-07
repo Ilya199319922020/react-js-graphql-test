@@ -53,7 +53,11 @@
 	display: none;
  }
  
- 
+ button{
+	background-color: rgb(254, 254, 255);
+		border: rgb(254, 254, 255);
+		padding: 0;
+ }
  
  button::-moz-focus-inner {
 	padding: 0;

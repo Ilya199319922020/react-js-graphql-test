@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import PageCard from './PageCard/PageCard';
 import PageElement from './PageElement/PageElement';
 import styles from './PageList.module.css';
 
-const PageList = ({ elements, page, setPage, pageElement, dispatch }) => {
-
-	const [idCurrent, setIdCurrent] = useState(0);
+const PageList = ({
+	elements, page, setPage, pageElement,
+	dispatch, setIdCurrent, idCurrent
+}) => {
 
 	const listLaunch = elements && elements
 		.map(el => <PageElement
@@ -14,12 +15,13 @@ const PageList = ({ elements, page, setPage, pageElement, dispatch }) => {
 			setIdCurrent={setIdCurrent}
 		/>
 		);
-	console.log(pageElement)
+
 	const pageElementItem = pageElement.length && pageElement
 		.map(e => <PageCard
 			key={e.id}
 			element={e}
 			setIdCurrent={setIdCurrent}
+			idCurrent={idCurrent}
 		/>
 		);
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import style from './PageElement.module.css';
-import arrow from '../../../assets/icon/icon.png';
 
 const PageElement = ({ elementLaunch, handlerPage, setIdCurrent }) => {
 
@@ -22,12 +21,11 @@ const PageElement = ({ elementLaunch, handlerPage, setIdCurrent }) => {
 				<button
 					id={elementLaunch.id}
 					className={style.page__header_btn}
-					onClick={()=> setIdCurrent(elementLaunch.id)}
+					onClick={() => setIdCurrent(elementLaunch.id)}
 				>
-					<img
-						className={style.page__header_arrow}
-						src={arrow}
-					/>
+					<svg width="16" height="16" viewBox="0 0 16 16" fill="none" className={style.page__header_arrow} xmlns="http://www.w3.org/2000/svg">
+						<path d="M0 9L12.17 9L6.58 14.59L8 16L16 8L8 0L6.59 1.41L12.17 7L0 7L0 9Z" fill="#2962FF" />
+					</svg>
 				</button>
 			</div>
 			<PageElementInfo
@@ -39,10 +37,10 @@ const PageElement = ({ elementLaunch, handlerPage, setIdCurrent }) => {
 
 export default PageElement;
 
-export const PageElementInfo = ({ elementLaunch }) => {
+export const PageElementInfo = ({ elementLaunch, idCurrent }) => {
 	return (
 		<div
-			className={style.page__info}
+			className={idCurrent ? style.page__info_active : style.page__info}
 		>
 			<div
 				className={style.page__info_type}
