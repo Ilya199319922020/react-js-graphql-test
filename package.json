@@ -1,6 +1,7 @@
 {
   "name": "react-js-graphql-test",
   "version": "0.1.0",
+  "homepage":"https://ilya199319922020.github.io/react-js-graphql-test/",
   "private": true,
   "dependencies": {
     "@apollo/client": "^3.6.9",
@@ -18,7 +19,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "proxy": "http://localhost:3000",
   "eslintConfig": {
@@ -39,5 +42,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
   }
 }
