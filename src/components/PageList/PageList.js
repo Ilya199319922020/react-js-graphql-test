@@ -67,9 +67,11 @@ const PageList = ({
 								disabled={!page}
 								onClick={() => setPage(prev => prev - 1)}
 							>
-								<div>
-									&lt;
-								</div>
+								{
+									page !== 0 && <svg className={styles.container__btn_prevImage} width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M7.41 1.41L6 0L0 6L6 12L7.41 10.59L2.83 6L7.41 1.41Z" fill="#3C474C" />
+									</svg>
+								}
 							</button>
 							<span
 								className={styles.container__btn_page}
@@ -80,9 +82,9 @@ const PageList = ({
 								className={styles.container__btn_next}
 								onClick={() => setPage(prev => prev + 1)}
 							>
-								<div>
-									&gt;
-								</div>
+								<svg className={styles.container__btn_nextImage} width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M0.59 10.59L2 12L8 6L2 0L0.59 1.41L5.17 6L0.59 10.59Z" fill="#3C474C" />
+								</svg>
 							</button>
 						</div>
 					</div>

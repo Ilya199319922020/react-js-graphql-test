@@ -1,4 +1,4 @@
-.page{
+	.page{
 	display: flex;
 	flex-direction: column;
 	}
@@ -37,24 +37,30 @@
 		margin-bottom: 40px;
 	}
 	.page__info_type{
-		display: flex;
-		justify-content: space-between;
-		margin-right: 200px;
+				margin-right: 200px;
 		min-width: 253px;
 	}
-	.page__info_location{
-		
+	.page__info_typeHeader{
+		margin-right: 104px;
 	}
 	.page__header_arrow path:hover {  
 		fill: #092d7a; 
+	}
+	.page__info_locationPort{
+		
+	}
+	.page__info_type{
+		width: 453px;
+		padding: 0;
+		margin: 0;
 	}
 	.page__info_type span:nth-child(2),
 	.page__info_location span:nth-child(2){
 		color: #2962FF;
 	}
-	.page__info_locationPort{
-		margin-right: 104px;
-	}
+	.page__info_location span:nth-child(2){
+		margin-left: 104px;
+	} 
 	.pageCard{
 		font-weight: 400;
       font-size: 16px;
@@ -77,17 +83,20 @@
 	.pageCard__block_info{
 		display: flex;
 	}
-
 	.pageCard__block_heft span:nth-child(2),
 	.pageCard__block_year span:nth-child(2) {
 		color: #2962FF;
+	}
+	.pageCard__block_heft{
+		width: 453px;
+		padding: 0;
+		margin: 0;
 	}
 	.pageCard__block_heftItem{
 		margin-right: 105px;
 	}
 	.pageCard__block_year{
-		margin-left: 247px;
-		margin-bottom: 40px;
+				margin-bottom: 40px;
 	}
 	.pageCard__block_yearItem{
 		margin-right: 115px;
@@ -95,12 +104,10 @@
 	.pageCard__block_missionHeader{
 		margin-bottom: 22px;
 	}
-
 	.pageCard__block_missionHeader{
 		font-weight: 400;
       font-size: 16px;
 	}
-
 	.pageCard__block_missionText{
 		color: #2962FF;
 	}

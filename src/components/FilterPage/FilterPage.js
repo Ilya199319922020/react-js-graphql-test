@@ -74,7 +74,11 @@ const FilterPage = ({ state, dispatch, arrElements }) => {
 						Порт
 					</div>
 					<input
-						className={style.sidebar__inputCheckbox_item}
+						className={
+							isGropdown 
+							? style.sidebar__inputCheckbox_itemActive 
+							: style.sidebar__inputCheckbox_item
+						}
 						placeholder={
 							count > 1
 								? `Выбраны ${count}`

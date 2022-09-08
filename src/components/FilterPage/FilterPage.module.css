@@ -1,5 +1,7 @@
 .container{
 	border-left: 1px solid #A5A5A5;
+	padding-right: 32px;
+	width: 393px;
 }
 .sidebar{
 	margin-top: 52px;
@@ -14,10 +16,11 @@
 	padding-bottom: 7px;
 	border-bottom: 1px solid #A5A5A5;
 	margin-bottom: 41px;
+	width: 100%;
 }
 .sidebar__inputCheckbox{
 	padding-bottom:144px;
-	
+	width: 100%;
 }
 .sidebar__inputCheckbox_itemText{
 	font-size: 14px;
@@ -29,12 +32,21 @@
 	padding-bottom: 7px;
 	color: transparent;
   text-shadow: 0 0 0 black;
-
-	}
+  width: 100%;
+}
+.sidebar__inputCheckbox_itemActive {
+	border-bottom: 1px solid  #347CFF;;
+	padding-bottom: 7px;
+	color: transparent;
+  text-shadow: 0 0 0 black;
+  width: 100%;
+}
 .sidebar__inputActive{
 	position: absolute;
 	background: #FFFFFF;
 box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.23), 0px 3px 6px rgba(0, 0, 0, 0.16);
+width: 244.75px;
+
 }
 
 input::placeholder{
