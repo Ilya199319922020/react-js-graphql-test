@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-js-graphql-test/static/css/main.4eab4d03.css",
+    "main.js": "/react-js-graphql-test/static/js/main.665a5377.js",
+    "index.html": "/react-js-graphql-test/index.html",
+    "main.4eab4d03.css.map": "/react-js-graphql-test/static/css/main.4eab4d03.css.map",
+    "main.665a5377.js.map": "/react-js-graphql-test/static/js/main.665a5377.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4eab4d03.css",
+    "static/js/main.665a5377.js"
+  ]
+}
