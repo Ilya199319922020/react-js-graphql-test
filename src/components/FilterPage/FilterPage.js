@@ -21,11 +21,9 @@ const FilterPage = ({ state, dispatch, arrElements }) => {
 				}
 			});
 		}
-
 		target.type === 'checkbox' && target.checked
 			? setCount(prev => prev + 1)
 			: setCount(prev => prev - 1)
-
 	};
 
 	const onFilterName = (e) => {
@@ -174,7 +172,7 @@ const FilterPage = ({ state, dispatch, arrElements }) => {
 export default FilterPage;
 
 const Input = ({ children, checked, value, id, onChange, type }) => {
-	console.log(value)
+	
 	return (
 		<div
 			className={style.input}
